@@ -3,5 +3,7 @@ from .models import *
 
 admin.site.register(User)
 admin.site.register(Book)
-admin.site.register(BookDetails)
-admin.site.register(BorrowedBooks)
+admin.site.register(BookDetail)
+admin.site.register(BorrowedBook)
+
+# Register your models here.
