@@ -12,5 +12,4 @@ urlpatterns = [
     path('borrow-book/', BorrowBook, name='borrow-book'),
     path('return-book/<int:borrow_id>/', ReturnBook, name='return-book'),
     path('list-borrowed-books/', BorrowedBookList, name='borrowed-books'),
-    path('api-token-auth/', CustomAuthToken, name='api_token_auth')
 ]

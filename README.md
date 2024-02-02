@@ -7,8 +7,8 @@ This Django API provides endpoints for managing users, books, and borrowed books
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/library-management-api.git
-    cd library-management-api
+    git clone https://github.com/fuunshi/Library-Management-System.git
+    cd server
     ```
 
 2. **Install dependencies:**
@@ -28,6 +28,39 @@ This Django API provides endpoints for managing users, books, and borrowed books
     ```bash
     python manage.py runserver
     ```
+
+## Assumptions
+
+- This API assumes that userID, bookID, detailID and so on are integers which are auto generated.
+- Youre not fetching from browser url directly and using tools like `curl, http`
+- This guide assumes you are using linux based OS.
+
+## API Authorization
+
+- This application uses Token Authorization of REST framework
+- To disable token authorization comment out the token authorization middleware in settings.py
+- `'bookmanager.middleware.TokenAuthorizationMiddleware'` is the middleware which verifies each token.
+
+### How to get token
+
+- Create a user either superuser(using manage.py) or user(from admin)
+- To create super user:
+```bash
+python3 manage.py createsuperuser
+```
+- Fill out the given field
+- Run the following lines of code in `python3 manage.py shell`
+```py
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+user = User.objects.get(username='your_username')  # Replace 'your_username' with an existing username
+token, created = Token.objects.get_or_create(user=user)
+print(f'Token for user {user.username}: {token.key}')
+```
+- Using tokens in http fetch a GET operation:
+```bash
+http GET $apiUrl "Authorization: Token `$tokenHere`"
+```
 
 ## API Endpoints
 
