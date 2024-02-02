@@ -11,5 +11,6 @@ urlpatterns = [
     path('book-details/<int:bookID>/', AssignUpdateBookDetails, name='assign-update-book-details'),
     path('borrow-book/', BorrowBook, name='borrow-book'),
     path('return-book/<int:borrow_id>/', ReturnBook, name='return-book'),
-    path('list-borrowed-books/', BorrowedBookList, name='borrowed-books')
+    path('list-borrowed-books/', BorrowedBookList, name='borrowed-books'),
+    path('api-token-auth/', CustomAuthToken, name='api_token_auth')
 ]
