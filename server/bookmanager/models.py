@@ -5,7 +5,7 @@ class User(models.Model):
     UserID = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100, unique=True)
-    membershipDate = models.DateField(default=timezone.now())
+    membershipDate = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.name
@@ -13,7 +13,7 @@ class User(models.Model):
 class Book(models.Model):
     bookID = models.CharField(max_length=50, unique=True)
     title = models.CharField(max_length=100)
-    ISBN = models.IntegerField(max_length=13, unique=True)
+    ISBN = models.CharField(max_length=13, unique=True)
     publishedDate = models.DateField()
     
     def __str__(self):
