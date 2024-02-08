@@ -8,7 +8,7 @@ This Django API provides endpoints for managing users, books, and borrowed books
 
     ```bash
     git clone https://github.com/fuunshi/Library-Management-System.git
-    cd server
+    cd Library-Management-System/server
     ```
 
 2. **Install dependencies:**
@@ -63,6 +63,8 @@ http GET $apiUrl "Authorization: Token `$tokenHere`"
 ```
 
 ## API Endpoints
+
+- URL : `http://127.0.0.1:8000/api/`
 
 ### Users
 
