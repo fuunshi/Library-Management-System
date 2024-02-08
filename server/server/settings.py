@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'bookmanager.middleware.TokenAuthorizationMiddleware'
+    # 'bookmanager.middleware.TokenAuthorizationMiddleware'
 ]
 
 ROOT_URLCONF = 'server.urls'
