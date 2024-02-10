@@ -29,6 +29,12 @@ This Django API provides endpoints for managing users, books, and borrowed books
     python manage.py runserver
     ```
 
+## Docker
+- You may also use docker for running
+- `docker-compose build`
+- `docker-compose up`
+
+
 ## Assumptions
 
 - This API assumes that userID, bookID, detailID and so on are integers which are auto generated.
